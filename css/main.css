@@ -97,6 +97,8 @@ a:hover {
 /* layout */
 body {
   font-family: "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  background: #eee;
 }
 .wrap {
   width: 100%;
@@ -125,18 +127,45 @@ body {
   font-size: 18px;
   font-weight: 500;
 }
+
+.gnb > li > a:before {
+  content: "";
+  position: absolute;
+  background: #f8b922;
+  width: 75%;
+  height: 100%;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -90px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.gnb li:hover > a:before,
+.gnb li > a:focus:before {
+  opacity: 1;
+  top: 0;
+}
+
 .gnb ul.inner {
   width: 160px;
   background-color: white;
   box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.1);
-  padding: 10px 25px;
-  line-height: 50px;
   box-sizing: border-box;
-  opacity: 1;
-  display: none;
+  opacity: 0;
+  padding: 0;
+  line-height: 0;
+  transition: opacity 0.5s, top 0.5s;
+  overflow: hidden;
+  position: absolute;
+  top: 80px;
+  left: 12%;
 }
 .gnb ul.inner.on {
-  display: block;
+  padding: 10px 25px;
+  line-height: 50px;
+  opacity: 1;
+  top: 90px;
 }
 .gnb ul.inner a {
   display: block;
@@ -145,17 +174,38 @@ body {
   font-size: 17px;
 }
 
+.gnb ul.inner a span {
+  display: inline-block;
+  position: relative;
+}
+.gnb ul.inner a span:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #f8b922;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: all 0.3;
+  bottom: 8px;
+}
+.gnb ul.inner a:hover span:after,
+.gnb ul.inner a:focus span:after {
+  width: 100%;
+  padding-right: 10px;
+}
+
 /* header */
 header {
   width: 100%;
   position: fixed;
   z-index: 100;
+  background-color: #191a1a;
 }
 .innerHeader {
   padding: 0 60px;
   height: 90px;
   transition: all 0.3s;
-  background-color: purple;
 }
 .innerHeader .logo {
   width: 200px;
@@ -178,4 +228,22 @@ header {
 }
 .innerHeader .logo a img:nth-child(2) {
   opacity: 0;
+}
+
+/* fixHeader */
+header.on .innerHeader {
+  height: 60px;
+  transition: all 0.4s;
+}
+header.on .innerHeader .logo {
+  margin-top: 13px;
+  transition: all 0.4s;
+}
+header.on .innerHeader .gnb > li {
+  height: 60px;
+  line-height: 60px;
+  transition: all 0.4s;
+}
+header.on .gnb ul.inner.on {
+  top: 60px;
 }
