@@ -135,12 +135,16 @@ body {
   opacity: 1;
   display: none;
 }
+.gnb ul.inner.on {
+  display: block;
+}
 .gnb ul.inner a {
   display: block;
   width: 100%;
   height: 100%;
   font-size: 17px;
 }
+
 /* header */
 header {
   width: 100%;
