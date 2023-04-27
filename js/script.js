@@ -36,5 +36,17 @@ $(function () {
     pauseOnHover: false,
     pauseOnFocus: false,
   });
-  $('.slick-prev').text("prev")
+  $(".slick-prev").text("prev");
+  // information slide
+  $(".slide2").slick({
+    arrows: false,
+    dots: true,
+    autoplay: true,
+    infinite: true,
+    slideToShow: 2,
+    slidesToScroll: 1,
+    autoplaySpeed: 6000,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+  });
 });
