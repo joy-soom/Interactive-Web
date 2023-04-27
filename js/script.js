@@ -20,7 +20,21 @@ $(function () {
   });
 });
 
-//글자 애니메이션 splitting 사용하기
+//글자 애니메이션 splitting
 $(function () {
   Splitting();
+});
+
+// slick slider
+$(function () {
+  $(".visual .slide").slick({
+    arrows: true,
+    dots: false,
+    autoplay: true,
+    fade: true,
+    autoplaySpeed: 7000,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+  });
+  $('.slick-prev').text("prev")
 });
