@@ -517,7 +517,6 @@ header.on .gnb ul.inner.on {
 .contents {
   position: relative;
   background-color: #fff;
-  margin-bottom: 5000px;
 }
 .contents .line {
   display: block;
@@ -630,6 +629,20 @@ header.on .gnb ul.inner.on {
 .contents .more:hover:after {
   width: 100%;
 }
+
+/*  inner:after(노란 세로 선) animation*/
+
+.motion:after {
+  animation-name: slide-down;
+  animation-duration: 0.5s;
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+}
+
 /* slide2 */
 .contents .slideBox {
   width: 1200px;
@@ -1297,7 +1310,7 @@ header.on .gnb ul.inner.on {
   margin: auto;
 }
 .contents .career .inner:after {
-  left: 125px;
+  left: 23px;
   top: -60px;
 }
 .contents .career .inner p {
@@ -1399,4 +1412,31 @@ header.on .gnb ul.inner.on {
     transform: scale(0.4);
     opacity: 0;
   }
+}
+
+/* ##################################### footer ############################################ */
+footer {
+  background-color: #191a1a;
+  padding: 30px 60px;
+  color: #666;
+}
+footer ul {
+  clear: both;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+footer ul:first-child {
+  font-weight: bold;
+  color: #aaa;
+  font-size: 15px;
+}
+footer ul li {
+  float: left;
+  margin-right: 20px;
+}
+footer p {
+  clear: both;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1px;
+  font-size: 15px;
 }
